@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="fr.wcs.blablawild.SearchItineraryActivity">
+
+    <TextView
+        android:id="@+id/label_departure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/departure" />
+
+    <EditText
+        android:id="@+id/edit_departure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/departure"
+        android:layout_below="@+id/label_departure"/>
+
+    <TextView
+        android:id="@+id/label_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/destination"
+        android:layout_below="@+id/edit_departure" />
+
+    <EditText
+        android:id="@+id/edit_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/destination"
+        android:layout_below="@+id/label_destination"/>
+
+    <TextView
+        android:id="@+id/label_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:layout_below="@+id/edit_destination" />
+
+    <EditText
+        android:id="@+id/edit_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/date"
+        android:layout_below="@+id/label_date"/>
+
+    <Button
+        android:id="@+id/form_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_text"
+        android:layout_below="@id/edit_date"/>
+</RelativeLayout>
