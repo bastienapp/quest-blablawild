@@ -3,6 +3,7 @@ package fr.wcs.blablawild;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,8 +16,12 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_search_itinerary_results_list);
 
-        String departure = getIntent().getStringExtra("departure");
-        String destination = getIntent().getStringExtra("destination");
+        SearchRequestModel searchRequest = (SearchRequestModel) getIntent().getParcelableExtra("searchRequest");
+        String departure = searchRequest.getDeparture();
+        String destination = searchRequest.getDestination();
+        String date = searchRequest.getDate();
+
+        Toast.makeText(this, date, Toast.LENGTH_LONG).show();
 
         setTitle(departure + " >> " + destination);
 

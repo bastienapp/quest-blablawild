@@ -37,12 +37,11 @@ public class SearchItineraryActivity extends AppCompatActivity {
                     Toast formIsEmpty = Toast.makeText(getApplicationContext(), getResources().getString(R.string.form_error), Toast.LENGTH_SHORT);
                     formIsEmpty.show();
                 } else {
-                    // Aller sur la page des résultats
+                    // Aller sur la page des résultats avec utilisation de Parcelable
                     Intent intent = new Intent(SearchItineraryActivity.this,
                             ViewSearchItineraryResultsListActivity.class);
-                    intent.putExtra("departure", departure);
-                    intent.putExtra("destination", destination);
-                    intent.putExtra("date", date);
+                    SearchRequestModel searchRequest = new SearchRequestModel(departure, destination, date);
+                    intent.putExtra("searchRequest", searchRequest);
 
                     SearchItineraryActivity.this.startActivity(intent);
                 }
